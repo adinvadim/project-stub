@@ -9,6 +9,6 @@
     "libs"
   ],
   "dependencies": {
-    "bem-components": "3.0.0"
+    "bem-components": "bem/bem-components#issues/1907@v3"
   }
 }
