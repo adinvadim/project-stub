@@ -32,8 +32,8 @@ const builder = Builder({
     }
 });
 
-gulp.task('build', function () {
-    return bundler('desktop.bundles/*')
+gulp.task('build', () => {
+    return bundler('desktop.bundles/index')
         .pipe(builder({
             css: bundle =>
                 bundle.src('css')
