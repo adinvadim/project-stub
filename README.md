@@ -9,7 +9,7 @@ There are two main BEM libraries are linked here by default:
 
 ## Installation requirements
 
-* [Node.js 0.12+](https://nodejs.org) is a platform built on JavaScript runtime for easily building fast, scalable network applications.
+* [Node.js 0.12+(4+ for Gulp build)](https://nodejs.org) is a platform built on JavaScript runtime for easily building fast, scalable network applications.
 * [Git Bash](https://git-for-windows.github.io/) if you use Windows OS.
 
 **Note:** If your operating system is Windows, you must run the following commands in Git Bash with administrator rights. Make sure that you launch Git Bash as an administrator.
@@ -43,6 +43,10 @@ You can run `enb` commands via `./node_modules/.bin/enb`.
 ```bash
 ./node_modules/.bin/enb make
 ```
+or
+```bash
+./node_modules/.bin/gulp build
+```
 
 To be able to run commands without typing a full path to an executable file (`./node_modules/.bin/enb`), use:
 
@@ -50,10 +54,11 @@ To be able to run commands without typing a full path to an executable file (`./
 export PATH=./node_modules/.bin:$PATH
 ```
 
-Now you can use `enb` from any point of your project.
+Now you can use `enb` or `gulp` from any point of your project.
 
 ```bash
 enb make
+gulp build
 ```
 
 ### The basic commands
