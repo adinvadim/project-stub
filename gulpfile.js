@@ -1,6 +1,7 @@
 const Builder = require('gulp-bem-bundle-builder');
 const bundler = require('gulp-bem-bundler-fs');
 const gulp = require('gulp');
+const path = require('path');
 const postcss = require('gulp-postcss');
 const postcssUrl = require('postcss-url');
 const autoprefixer = require('autoprefixer');
@@ -33,7 +34,7 @@ const builder = Builder({
 });
 
 gulp.task('build', () => {
-    return bundler('desktop.bundles/index')
+    return bundler('*.bundles/*')
         .pipe(builder({
             css: bundle =>
                 bundle.src('css')
@@ -58,12 +59,14 @@ gulp.task('build', () => {
                 var bemHtmlStream = bundle.src('bemhtml')
                     .pipe(concat('server.bemhtml.js'))
                     .pipe(bemhtml());
-                return gulp.src('*.bundles/*/*.bemjson.js')
+                return gulp.src(bundle.dirname + '/*.bemjson.js')
                     .pipe(toHtml(bemHtmlStream));
             }
        }))
        .on('error', console.error)
        .pipe(debug())
-       .pipe(gulp.dest('./desktop.bundles/index'))
+       .pipe(gulp.dest(file => path.dirname(file.path)))
        .on('error', console.error);
 });
+
+gulp.task('default', gulp.series('build'));

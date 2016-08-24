@@ -10,9 +10,7 @@
     "node": ">=0.12"
   },
   "dependencies": {
-    "bower": "^1.7.9",
-    "connect": "^3.4.1",
-    "serve-static": "^1.11.1"
+    "bower": "^1.7.9"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -23,6 +21,7 @@
     "enb-borschik": "^2.4.0",
     "enb-js": "^1.1.0",
     "enb-stylus": "^2.3.2",
+    "glob": "^7.0.5",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-bem-bundle-builder": "gulp-bem/gulp-bem-bundle-builder#gulp-bem-src-fix",
     "gulp-bem-bundler-fs": "gulp-bem/gulp-bem-bundler-fs#proposals",
@@ -40,7 +39,7 @@
   },
   "scripts": {
     "start": "enb server",
-    "simple-start": "node server",
+    "server": "python -m SimpleHTTPServer 8080",
     "postinstall": "npm run deps",
     "deps": "bower i --allow-root"
   },
