@@ -7,7 +7,7 @@ const postcssUrl = require('postcss-url');
 const autoprefixer = require('autoprefixer');
 const debug = require('gulp-debug');
 const csso = require('gulp-csso');
-const filter = require('through2-filter');
+const filter = require('through2-filter').obj;
 const merge = require('merge2');
 const concat = require('gulp-concat');
 const stylus = require('gulp-stylus');
@@ -51,7 +51,7 @@ gulp.task('build', () => {
                 merge(
                     gulp.src(require.resolve('ym')),
                     bundle.src('js')
-                        .pipe(filter.obj(file => file.tech !== 'bemhtml.js'))
+                        .pipe(filter(file => file.tech !== 'bemhtml.js'))
                 )
                     .pipe(uglify())
                     .pipe(concat(bundle.name + '.min.js')),
@@ -65,8 +65,7 @@ gulp.task('build', () => {
        }))
        .on('error', console.error)
        .pipe(debug())
-       .pipe(gulp.dest(file => path.dirname(file.path)))
-       .on('error', console.error);
+       .pipe(gulp.dest(file => path.dirname(file.path)));
 });
 
 gulp.task('default', gulp.series('build'));

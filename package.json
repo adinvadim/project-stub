@@ -21,7 +21,6 @@
     "enb-borschik": "^2.4.0",
     "enb-js": "^1.1.0",
     "enb-stylus": "^2.3.2",
-    "glob": "^7.0.5",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-bem-bundle-builder": "gulp-bem/gulp-bem-bundle-builder#gulp-bem-src-fix",
     "gulp-bem-bundler-fs": "gulp-bem/gulp-bem-bundler-fs#proposals",
