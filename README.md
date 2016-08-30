@@ -45,7 +45,7 @@ You can run `enb` commands via `./node_modules/.bin/enb`.
 ```
 or
 ```bash
-./node_modules/.bin/gulp build
+./node_modules/.bin/gulp
 ```
 
 To be able to run commands without typing a full path to an executable file (`./node_modules/.bin/enb`), use:
