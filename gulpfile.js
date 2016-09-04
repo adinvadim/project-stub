@@ -36,6 +36,12 @@ const builder = Builder({
 gulp.task('build', () => {
     return bundler('*.bundles/*')
         .pipe(builder({
+            cssdeps: bundle => bundle.src('css', {deps: true})
+                .pipe(concat(bundle.name + '.css.deps.js')),
+            jsdeps: bundle => bundle.src('js', {deps: true})
+                .pipe(concat(bundle.name + '.js.deps.js')),
+            bemhtmldeps: bundle => bundle.src('bemhtml', {deps: true})
+                .pipe(concat(bundle.name + '.bemhtml.deps.js')),
             css: bundle =>
                 bundle.src('css')
                     .pipe(stylus())
